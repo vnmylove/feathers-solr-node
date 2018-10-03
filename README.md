@@ -19,9 +19,9 @@ const express = require("@feathersjs/express");
 const logger = require("winston");
 
 const Service = new solr({
-  host: "115.79.204.120",
+  host: "127.0.0.1", // your solr host
   port: 8086,
-  core: "topic_27009",
+  core: "gettingstarted", // core name or collection name
   username: "solr_user", // optional
   password: "sol_password", // optional
   paginate: {
