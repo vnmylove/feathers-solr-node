@@ -3,7 +3,7 @@ const rest = require("feathers-rest");
 const hooks = require("feathers-hooks");
 const bodyParser = require("body-parser");
 const errorHandler = require("feathers-errors/handler");
-const solr = require("../lib/index");
+const solr = require("../main");
 const express = require("@feathersjs/express");
 const logger = require("winston");
 
