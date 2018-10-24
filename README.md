@@ -1,5 +1,5 @@
 # feathers-solr-node
-> Solr Adapter for Feathersjs. Based on Solr-Client Adapter, so can also used as a Solr-client. see [here](https://github.com/lbdremy/solr-node-client)
+> Solr Adapter for Feathersjs. Build on Solr-Client Adapter, so can also used as a Solr-client. see [here](https://github.com/lbdremy/solr-node-client)
 
 ## Installation
 ```
@@ -24,6 +24,7 @@ const Service = new solr({
   core: "gettingstarted", // core name or collection name
   username: "solr_user", // optional
   password: "sol_password", // optional
+  primaryKey: 'id',
   paginate: {
     default: 10,
     max: 100
@@ -56,4 +57,16 @@ app.listen(3030);
 console.log("Feathers app started on 127.0.0.1:3030");
 
 ```
+## Support all Feathers Queries 
+See [Feathers querying](https://docs.feathersjs.com/api/databases/querying.html) for more detail
 
+## Supported Solr Queries
+
+### $search
+Simple query
+
+```javascript
+query: {
+  $search: '"I love Vietnam" OR "I love you"'
+}
+```
