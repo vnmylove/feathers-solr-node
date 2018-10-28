@@ -23,7 +23,7 @@ const Service = new solr({
   port: 8086,
   core: "gettingstarted", // core name or collection name
   username: "solr_user", // optional
-  password: "sol_password", // optional
+  password: "solr_password", // optional
   primaryKey: 'id',
   paginate: {
     default: 10,
