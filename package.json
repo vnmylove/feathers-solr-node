@@ -7,7 +7,7 @@
   "name": "feathers-solr-node",
   "main": "./main",
   "description": "Solr Adapter for Feathersjs. Base on Solr-client, so can also used as a Solr-client",
-  "version": "0.1.9",
+  "version": "0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/vnmylove/feathers-solr-node"

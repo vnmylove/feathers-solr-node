@@ -14,11 +14,11 @@ const rest = require("feathers-rest");
 const hooks = require("feathers-hooks");
 const bodyParser = require("body-parser");
 const errorHandler = require("feathers-errors/handler");
-const solr = require("../main");
+const solr = require("feathers-solr-node");
 const express = require("@feathersjs/express");
 const logger = require("winston");
 
-const Service = new solr({
+const Service = new solr.Service({
   host: "127.0.0.1", // your solr host
   port: 8086,
   core: "gettingstarted", // core name or collection name
