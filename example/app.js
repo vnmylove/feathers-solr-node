@@ -1,18 +1,17 @@
-const feathers = require("feathers");
-const rest = require("feathers-rest");
-const hooks = require("feathers-hooks");
-const bodyParser = require("body-parser");
-const errorHandler = require("feathers-errors/handler");
-const solr = require("../main");
-const express = require("@feathersjs/express");
-const logger = require("winston");
+const feathers = require('feathers');
+const rest = require('feathers-rest');
+const hooks = require('feathers-hooks');
+const bodyParser = require('body-parser');
+const solr = require('../main');
+const express = require('@feathersjs/express');
+const logger = require('winston');
 
 const Service = new solr({
-  host: "115.79.204.120",
-  port: 8086,
-  core: "topic_27009",
-  username: "solr",
-  password: "solradmin",
+  host: 'localhost',
+  port: 8089,
+  core: 'topic_27009',
+  username: 'solr',
+  password: 'solradmin',
   paginate: {
     default: 10,
     max: 100
@@ -24,12 +23,12 @@ const app = feathers()
   .configure(hooks())
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true }))
-  .use("/solr", Service)
+  .use('/solr', Service)
   .use(
     express.errorHandler({
       html: false,
       logger,
-      json: (err, req, res, next) => {
+      json: (err, req, res) => {
         res.json({
           error: {
             message: err.message,
@@ -42,4 +41,5 @@ const app = feathers()
 
 app.listen(3030);
 
-console.log("Feathers app started on 127.0.0.1:3030");
+// eslint-disable-next-line no-console
+console.log('Feathers app started on 127.0.0.1:3030');
